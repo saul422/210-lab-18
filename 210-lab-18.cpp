@@ -29,8 +29,24 @@ cin>> "choice: ";
 cin.ignore();
 
 
-//Obtain two pieces of data from the user, the rating and the comments. Store these in the linked list.//
 
+//Obtain two pieces of data from the user, the rating and the comments. Store these in the linked list.//
+do {
+    cout<< "Enter review rating 0 - 5: ";
+    cin>> rating;
+    cin.ignore();
+    cout<< "Enter review comments: ";
+    getline(cin, comments);
+
+    if (choice ==1){
+        head = addToFront(head, rating, comments);
+    } 
+    else if (choice == 2)
+    {
+        head = addToTail(head, rating, comments);
+    }
+    
+}
 
 //ask user for rating ranging from 0 - 5, rating data type is double
 
