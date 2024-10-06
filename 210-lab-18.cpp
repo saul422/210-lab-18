@@ -45,14 +45,22 @@ do {
     {
         head = addToTail(head, rating, comments);
     }
-    
+    cout << "Enter another review? Y/N: ";
+cin>> continueInput;
+cin.ignore();
 }
+while (tolower(continueInput) == 'y');
 
+cout<< "Outputting all reviews:\n";
+outputReviews(head);
+double averageRating = calculateAverageRating(head);
+cout<< "> Average: "<< averageRating << endl;
 //ask user for rating ranging from 0 - 5, rating data type is double
 
 //ask user if they have any comments stored in linked list
 
 //ask user if they have another review, yes or no question
+
 
 //display all reviews, review #:, rating:, traversing a linked list
 return 0;
