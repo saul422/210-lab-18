@@ -30,7 +30,7 @@ cin.ignore();
 
 
 
-//Obtain two pieces of data from the user, the rating and the comments. Store these in the linked list.//
+//Obtain two pieces of data from the user, the rating and the comments. Store these in the linked list.
 do {
     cout<< "Enter review rating 0 - 5: ";
     cin>> rating;
@@ -56,4 +56,56 @@ do {
 
 //display all reviews, review #:, rating:, traversing a linked list
 return 0;
+}
+
+
+//create the function for addToFront
+Review* addToFront(Review* head, double rating, string comments)
+{
+    Review* newReview = new Review;
+    newReview->rating = rating;
+    newReview->comments = comments;
+    newReview->next = head;
+    return newReview;
+}
+//create the function for addToTail
+Review* addToTail(Review* head, double rating, string comments)
+{
+    Review* newReview = new Review;
+    newReview->rating = rating;
+    newReview->comments = comments;
+    newReview->next = nullptr;
+    
+    if (!head){
+        return newReview;
+    }
+    Review* current = head;
+    while (current-> next)
+        {current = current-> next;
+        }
+        current-> next = newReview;
+        return head;
+
+}
+//create a function that will tranverse a linked list and displays variables and data
+void outputReviews(Review* head) {
+int count = 1;
+Review* current = head;
+while (current){
+    cout<< "> Review # "<< count++ << " : " << current->rating << " : " << endl;
+}
+}
+
+//create a function that calculates the average rating
+double calculateAverageRating(Review* head){
+    int count = 0;
+    double sum = 0.0;
+    Review* current = head;
+    while(current){
+        sum += current ->rating;
+        count++;
+        current = current->next;
+
+    }
+    return count == 0 ? 0 : sum / count;
 }
