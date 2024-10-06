@@ -11,11 +11,17 @@ struct Review {
     double rating;  //data
     string comments;
     Review *next;     //ptrs
-}
+};
+
+Review* addToFront (Review* head, double rating, string comments);
+Review* addToTail (Review* head, double rating, string comments);
+void outputReviews(Review* head);
+double calculateAverageRating(Review* head);
+
 
 
 int main () {
-    Review* head nullptr;
+    Review* head = nullptr;
     int choice;
     char continueInput;
     double rating;
@@ -25,7 +31,8 @@ int main () {
 cout << "Which linked list method should we use?\n";
 cout<< " [1] New nodes are added at the head of the linked list\n";
 cout<< " [2] New nodes are added at the tail of the linked list.\n";
-cin>> "choice: ";
+cout<< "Choice: ";
+cin>> choice;
 cin.ignore();
 
 
