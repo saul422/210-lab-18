@@ -1,3 +1,6 @@
+
+/*Joseph Graves | Comsc-210
+Lab 18   */
 //Write a C++ program which could be used to efficiently store these reviews. Implement this in a list.
 #include <iostream>
 #include <string>
@@ -107,7 +110,8 @@ void outputReviews(Review* head) {
 int count = 1;
 Review* current = head;
 while (current){
-    cout<< "> Review # "<< count++ << " : " << current->rating << " : " << endl;
+    cout<< "> Review # "<< count++ << " : " << current->rating << " : " < current-> comments <<endl;
+    current = current ->next;
 }
 }
 
